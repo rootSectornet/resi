@@ -1,0 +1,13 @@
+/apps/node_modules
+/apps//public/hot
+/apps//public/storage
+/apps//storage/*.key
+/apps//vendor
+/apps/.env
+/apps/.env.backup
+/apps/.phpunit.result.cache
+/apps/docker-compose.override.yml
+/apps/Homestead.json
+/apps/Homestead.yaml
+/apps/npm-debug.log
+/apps/yarn-error.log
