@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Jabatan;
 use App\Http\Resources\Jabatan as JabatanResource;
 use App\Http\Resources\JabatanCollection;
+use Illuminate\Support\Facades\Validator;
 
 class JabatanController extends Controller
 {
@@ -15,8 +16,11 @@ class JabatanController extends Controller
     	$jabatan = Jabatan::get();
     	return view('jabatan.list',['jabatan' => $jabatan]);
     }
-    public function create()
+    public function create(Request $request)
     {
-    	return view('jabatan.create');
+        $validator = Validator::make($request->all(), [
+            'jabatan' => 'required|string',
+        ])->validate();
+        return redirect('jabatans')->withErrors($validator, 'jabatan');
     }
 }

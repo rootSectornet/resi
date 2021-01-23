@@ -22,6 +22,6 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 
 Route::post('/jadwal', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/jabatans', [App\Http\Controllers\JabatanController::class, 'index']);
-Route::get('/jabatans/tambah', [App\Http\Controllers\JabatanController::class, 'create']);
+Route::post('/jabatans/store', [App\Http\Controllers\JabatanController::class, 'create']);
 
 
