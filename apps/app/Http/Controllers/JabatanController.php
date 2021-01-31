@@ -18,9 +18,21 @@ class JabatanController extends Controller
     }
     public function create(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'jabatan' => 'required|string',
-        ])->validate();
-        return redirect('jabatans')->withErrors($validator, 'jabatan');
+        $jabatan = new Jabatan();
+        $jabatan->name = $request->jabatan;
+        $jabatan->save();
+        return redirect('jabatans');
+    }
+    public function update($id,Request $request)
+    {
+        Jabatan::where('id', $id)
+        ->update(['name' => $request->jabatan]);
+        return redirect('jabatans');
+    }
+    public function hapus($id)
+    {
+        Jabatan::where('id', $id)
+        ->delete();
+        return redirect('jabatans');
     }
 }

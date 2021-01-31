@@ -1,13 +1,13 @@
 
 
-<form method="POST" action="{{ url('jadwal') }}">
+<form method="POST" action="/jadwal/create">
     @csrf
     <div class="row p-4  justify-content-center">
         <div class="col-md-6">
             <div class="px-4">
                 <div class="form-group">
                     <label for="date" class="control-label">{{ __('Tanggal') }}</label>
-                        <input id="date" type="date" placeholder="date" class="form-control @error('date') is-invalid @enderror" name="date" value="{{ old('date') }}" required autocomplete="date" autofocus>
+                        <input id="date" type="date" placeholder="date" class="form-control @error('date') is-invalid @enderror" name="tanggal" value="{{ old('date') }}" required autocomplete="date" autofocus>
                         @error('date')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
