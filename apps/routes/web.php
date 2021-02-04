@@ -42,5 +42,5 @@ Route::post('/pegawai/edit/{id}', [App\Http\Controllers\PegawaiController::class
 Route::get('/pegawai/hapus/{id}', [App\Http\Controllers\PegawaiController::class, 'hapus']);
 
 
-Route::get('/laporan', [App\Http\Controllers\PegawaiController::class, 'index']);
-
+Route::get('/laporan', [App\Http\Controllers\LaporanController::class, 'index']);
+Route::post('/laporan/filter', [App\Http\Controllers\LaporanController::class, 'filter']);
